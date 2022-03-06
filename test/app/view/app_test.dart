@@ -6,14 +6,15 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:the_list/ui/view/animals_page.dart';
 import 'package:the_list/app/app.dart';
-import 'package:the_list/counter/counter.dart';
+//import 'package:the_list/animals/animals.dart';
 
 void main() {
   group('App', () {
-    testWidgets('renders CounterPage', (tester) async {
+    testWidgets('renders AnimalPage', (tester) async {
       await tester.pumpWidget(const App());
-      expect(find.byType(CounterPage), findsOneWidget);
+      expect(find.byType(AnimalPage), findsOneWidget);
     });
   });
 }

@@ -11,34 +11,34 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-import 'package:the_list/counter/animals.dart';
+import 'package:the_list/ui/animals.dart';
 
 import '../../helpers/helpers.dart';
 
-class MockCounterCubit extends MockCubit<int> implements CounterCubit {}
+class MockCounterCubit extends MockCubit<int> implements AnimalCubit {}
 
 void main() {
-  group('CounterPage', () {
-    testWidgets('renders CounterView', (tester) async {
-      await tester.pumpApp(const CounterPage());
-      expect(find.byType(CounterView), findsOneWidget);
+  group(' AnimalsPage', () {
+    testWidgets('renders AnimalView', (tester) async {
+      await tester.pumpApp(const AnimalPage());
+      expect(find.byType(AnimalView), findsOneWidget);
     });
   });
 
-  group('CounterView', () {
-    late CounterCubit counterCubit;
+  group('AnimalView', () {
+    late AnimalCubit counterCubit;
 
     setUp(() {
       counterCubit = MockCounterCubit();
     });
 
-    testWidgets('renders current count', (tester) async {
+    testWidgets('renders current animal', (tester) async {
       const state = 42;
       when(() => counterCubit.state).thenReturn(state);
       await tester.pumpApp(
         BlocProvider.value(
           value: counterCubit,
-          child: const CounterView(),
+          child: const AnimalView(),
         ),
       );
       expect(find.text('$state'), findsOneWidget);
@@ -51,7 +51,7 @@ void main() {
       await tester.pumpApp(
         BlocProvider.value(
           value: counterCubit,
-          child: const CounterView(),
+          child: const AnimalView(),
         ),
       );
       await tester.tap(find.byIcon(Icons.add));
@@ -65,7 +65,7 @@ void main() {
       await tester.pumpApp(
         BlocProvider.value(
           value: counterCubit,
-          child: const CounterView(),
+          child: const AnimalView(),
         ),
       );
       await tester.tap(find.byIcon(Icons.remove));
