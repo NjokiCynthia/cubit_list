@@ -6,8 +6,9 @@
 // https://opensource.org/licenses/MIT.
 
 import 'package:flutter_test/flutter_test.dart';
+import 'package:the_list/ui/view/animals_page.dart';
 import 'package:the_list/app/app.dart';
-import 'package:the_list/animals/animals.dart';
+//import 'package:the_list/animals/animals.dart';
 
 void main() {
   group('App', () {

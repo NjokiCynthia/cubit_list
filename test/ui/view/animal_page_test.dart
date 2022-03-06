@@ -11,7 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-import 'package:the_list/animals/animals.dart';
+import 'package:the_list/ui/animals.dart';
 
 import '../../helpers/helpers.dart';
 

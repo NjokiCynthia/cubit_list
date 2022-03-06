@@ -1,7 +1,7 @@
 {
     "@@locale": "en",
-    "counterAppBarTitle": "Animals",
-    "@counterAppBarTitle": {
-        "description": "Text shown in the AppBar of the Counter Page"
+    "animalAppBarTitle": "Animals",
+    "@animalAppBarTitle": {
+        "description": "Text shown in the AppBar of the Animals Page"
     }
 }
