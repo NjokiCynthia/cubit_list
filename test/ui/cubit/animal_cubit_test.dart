@@ -8,24 +8,24 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:the_list/counter/animals.dart';
+import 'package:the_list/animals/animals.dart';
 
 void main() {
   group('CounterCubit', () {
     test('initial state is 0', () {
-      expect(CounterCubit().state, equals(0));
+      expect(AnimalCubit().state, equals(0));
     });
 
-    blocTest<CounterCubit, int>(
+    blocTest<AnimalCubit, int>(
       'emits [1] when increment is called',
-      build: CounterCubit.new,
+      build: AnimalCubit.new,
       act: (cubit) => cubit.increment(),
       expect: () => [equals(1)],
     );
 
-    blocTest<CounterCubit, int>(
+    blocTest<AnimalCubit, int>(
       'emits [-1] when decrement is called',
-      build: CounterCubit.new,
+      build: AnimalCubit.new,
       act: (cubit) => cubit.decrement(),
       expect: () => [equals(-1)],
     );
