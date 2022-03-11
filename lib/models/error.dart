@@ -1,6 +1,9 @@
-part of animal_models;
+part of animal_model;
 
-class Error implements Exception{
-  const Error({required this.message});
+class Failure implements Exception {
+  Failure({
+    required this.message,
+  });
+
   final String message;
 }

@@ -7,7 +7,22 @@
 
 import 'package:the_list/app/app.dart';
 import 'package:the_list/bootstrap.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:the_list/app/app.dart';
+import 'package:the_list/bootstrap.dart';
+import 'package:the_list/utils/_index.dart';
 
 void main() {
-  bootstrap(() => const App());
+  AnimalConfig(
+    values: AnimalValues(
+      baseDomain: 'https://jsonkeeper.com',
+    ),
+  );
+
+  bootstrap(
+        () => MultiBlocProvider(
+      providers: Singletons.registerCubits(),
+      child: const App(),
+    ),
+  );
 }

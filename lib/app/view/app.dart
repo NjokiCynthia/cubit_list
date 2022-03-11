@@ -7,13 +7,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:the_list/ui/view/animals_page.dart';
-import 'package:the_list/ui/animals.dart';
 import 'package:the_list/l10n/l10n.dart';
-
-//import '../../animals/view/animals_page.dart';
-import '../../ui/view/animals_page.dart';
-//import '../../ui/view/animals_page.dart';
+import 'package:the_list/utils/_index.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -32,7 +27,8 @@ class App extends StatelessWidget {
         GlobalMaterialLocalizations.delegate,
       ],
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const AnimalPage(),
+      initialRoute: The_List_Router.landingRoute,
+      onGenerateRoute: The_List_Router.generateRoute,
     );
   }
 }

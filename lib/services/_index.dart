@@ -1,4 +1,4 @@
-library animal_services;
+library animal_service;
 
 // Project imports
 import 'dart:convert';
@@ -12,3 +12,5 @@ import 'dart:developer';
 import 'dart:async';
 
 part 'animal_service.dart';
+
+NetworkUtil _networkUtil = NetworkUtil();

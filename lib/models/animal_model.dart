@@ -1,18 +1,34 @@
+part of animal_model;
 
-part of animal_models;
+@freezed
+class AnimalItemDTO with _$AnimalItemDTO {
+  factory AnimalItemDTO({
+    required String name,
+    required String slug,
+  }) = _AnimalItemDTO;
 
-class Animal {
-  Animal({this.id, this.title, this.details, this.image});
-  factory Animal.fromJson(dynamic json){
-    return Animal(
-      id: json['id'] as int,
-      title: json['title'] as String,
-      details: json['details'] as String,
-      image: json['image'] as String,
-    );
-  }
-  final int? id;
-  final String? title;
-  final String? details;
-  final String? image;
+  factory AnimalItemDTO.fromJson(Map<String, dynamic> json) =>
+      _$AnimalItemDTOFromJson(json);
+}
+
+@freezed
+class AnimalItemResult with _$AnimalItemResult {
+  factory AnimalItemResult(
+      List<AnimalItem> data,
+      ) = _AnimalItemResult;
+
+  factory AnimalItemResult.fromJson(Map<String, dynamic> json) =>
+      _$AnimalItemResultFromJson(json);
+}
+
+@freezed
+class AnimalItem with _$AnimalItem {
+  factory AnimalItem(
+      String uuid,
+      String name,
+      String slug,
+      ) = _AnimalItem;
+
+  factory AnimalItem.fromJson(Map<String, dynamic> json) =>
+      _$AnimalItemFromJson(json);
 }
